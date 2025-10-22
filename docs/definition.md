@@ -9,7 +9,7 @@ Outbox table for delivering webhooks.
 | id | BIGINT UNSIGNED | — | — | Surrogate primary key. |  |
 | event_type | VARCHAR(100) | NO | — | Webhook event key. |  |
 | payload | JSON | YES | — | JSON payload. |  |
-| status | ENUM('pending','sent','failed') | NO | ''pending'' | Delivery status. | enum: pending, sent, failed |
+| status | ENUM('pending','sent','failed') | NO | 'pending' | Delivery status. | enum: pending, sent, failed |
 | retries | INT | NO | 0 | Retry counter. |  |
 | next_attempt_at | DATETIME(6) | YES | — | Next attempt time (UTC). |  |
 | created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |

@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS webhook_outbox (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   event_type VARCHAR(100) NOT NULL,
   payload JSON NULL,
-  status ENUM(''pending'',''sent'',''failed'') NOT NULL DEFAULT ''pending'',
+  status ENUM('pending','sent','failed') NOT NULL DEFAULT 'pending',
   retries INT NOT NULL DEFAULT 0,
   next_attempt_at DATETIME(6) NULL,
   created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
