@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\WebhookOutbox\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\WebhookOutbox\Dto\WebhookOutboxDto;
 use BlackCat\Database\Packages\WebhookOutbox\Mapper\WebhookOutboxDtoMapper;
 use BlackCat\Database\Packages\WebhookOutbox\Repository\WebhookOutboxRepository;
