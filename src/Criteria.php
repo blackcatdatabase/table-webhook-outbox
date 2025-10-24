@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\WebhookOutbox;
 /**
  * Bezpečný builder WHERE/ORDER/LIMIT.
  * - whitelist filtrů: [ 'id', 'event_type', 'payload', 'status', 'retries', 'next_attempt_at', 'created_at', 'updated_at' ]
- * - whitelist pro LIKE hledání: [ 'event_type' ]
+ * - whitelist pro LIKE hledání: [ 'event_type', 'status' ]
  */
 final class Criteria {
     /** @var array<string,mixed> */
@@ -61,7 +61,7 @@ final class Criteria {
 
         // fulltext/LIKE (přes whitelist)
         if ($this->search !== null) {
-            $searchCols = [ 'event_type' ];
+            $searchCols = [ 'event_type', 'status' ];
             $likeParts = [];
             foreach ($searchCols as $i=>$c) {
                 if ($c === '') continue;

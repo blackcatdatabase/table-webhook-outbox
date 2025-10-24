@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\WebhookOutbox;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'webhook_outbox'; }
-    public static function contractView(): string { return 'v_webhook_outbox_contract'; }
+    public static function contractView(): string { return 'vw_webhook_outbox'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'event_type', 'payload', 'status', 'retries', 'next_attempt_at', 'created_at', 'updated_at' ]; }
     public static function pk(): string { return 'id'; }
