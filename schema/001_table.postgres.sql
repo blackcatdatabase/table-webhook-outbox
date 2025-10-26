@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@mtime:2025-10-24T09:46:38Z)
+-- Auto-generated from schema-map-postgres.psd1 (map@38d5403)
 -- engine: postgres
 -- table:  webhook_outbox
 CREATE TABLE IF NOT EXISTS webhook_outbox (
@@ -10,5 +10,7 @@ CREATE TABLE IF NOT EXISTS webhook_outbox (
   next_attempt_at TIMESTAMPTZ(6) NULL,
   created_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   updated_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  version INTEGER NOT NULL DEFAULT 0,
+  CONSTRAINT chk_webhook_outbox_version CHECK (version >= 0),
   CONSTRAINT chk_webhook_status CHECK (status IN ('pending','sent','failed'))
 );
