@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@38d5403)
+-- Auto-generated from schema-views-postgres.psd1 (map@c5e4097)
 -- engine: postgres
 -- table:  webhook_outbox
 -- Contract view for [webhook_outbox]
@@ -11,5 +11,6 @@ SELECT
   retries,
   next_attempt_at,
   created_at,
-  updated_at
+  updated_at,
+  version
 FROM webhook_outbox;

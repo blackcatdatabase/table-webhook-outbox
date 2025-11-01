@@ -1,8 +1,8 @@
--- Auto-generated from schema-views-mysql.psd1 (map@38d5403)
+-- Auto-generated from schema-views-mysql.psd1 (map@c5e4097)
 -- engine: mysql
 -- table:  webhook_outbox
 -- Contract view for [webhook_outbox]
-CREATE OR REPLACE SQL SECURITY INVOKER VIEW vw_webhook_outbox AS
+CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_webhook_outbox AS
 SELECT
   id,
   event_type,
@@ -11,5 +11,6 @@ SELECT
   retries,
   next_attempt_at,
   created_at,
-  updated_at
+  updated_at,
+  version
 FROM webhook_outbox;
