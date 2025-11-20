@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  webhook_outbox_metrics
 -- Metrics for [webhook_outbox]
@@ -10,7 +10,7 @@ SELECT
 FROM webhook_outbox
 GROUP BY status;
 
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  webhook_outbox
 -- Contract view for [webhook_outbox]

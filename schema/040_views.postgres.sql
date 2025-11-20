@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  webhook_outbox_metrics
 -- Metrics for [webhook_outbox]
@@ -10,7 +10,7 @@ SELECT
 FROM webhook_outbox
 GROUP BY status;
 
--- Auto-generated from schema-views-postgres.psd1 (map@9d3471b)
+-- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
 -- engine: postgres
 -- table:  webhook_outbox
 -- Contract view for [webhook_outbox]
