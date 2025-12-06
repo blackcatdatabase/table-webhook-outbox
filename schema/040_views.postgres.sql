@@ -1,18 +1,7 @@
--- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
--- engine: postgres
--- table:  webhook_outbox_metrics
--- Metrics for [webhook_outbox]
-CREATE OR REPLACE VIEW vw_webhook_outbox_metrics AS
-SELECT
-  status,
-  COUNT(*) AS total,
-  COUNT(*) FILTER (WHERE status=''pending'' AND (next_attempt_at IS NULL OR next_attempt_at <= now())) AS due_now
-FROM webhook_outbox
-GROUP BY status;
-
--- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
+-- Auto-generated from schema-views-postgres.yaml (map@sha1:EDC13878AE5F346E7EAD2CF0A484FEB7E68F6CDD)
 -- engine: postgres
 -- table:  webhook_outbox
+
 -- Contract view for [webhook_outbox]
 CREATE OR REPLACE VIEW vw_webhook_outbox AS
 SELECT
@@ -26,4 +15,3 @@ SELECT
   updated_at,
   version
 FROM webhook_outbox;
-

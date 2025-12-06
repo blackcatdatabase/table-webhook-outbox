@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class WebhookOutboxDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'event_type' => 'eventType', 'next_attempt_at' => 'nextAttemptAt', 'created_at' => 'createdAt', 'updated_at' => 'updatedAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'event_type' => 'eventType', 'payload' => 'payload', 'status' => 'status', 'retries' => 'retries', 'next_attempt_at' => 'nextAttemptAt', 'created_at' => 'createdAt', 'updated_at' => 'updatedAt', 'version' => 'version' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
@@ -39,13 +39,8 @@ final class WebhookOutboxDtoMapper
 
     private static function tz(): DateTimeZone
     {
-        if (self::$tzObj instanceof DateTimeZone) {
-            return self::$tzObj;
-        }
-        try {
+        if (!(self::$tzObj instanceof DateTimeZone)) {
             self::$tzObj = new DateTimeZone(self::TZ);
-        } catch (\Throwable) {
-            self::$tzObj = new DateTimeZone('UTC');
         }
         return self::$tzObj;
     }
