@@ -15,3 +15,4 @@ SELECT
   updated_at,
   version
 FROM webhook_outbox;
+
