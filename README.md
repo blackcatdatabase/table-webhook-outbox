@@ -82,8 +82,8 @@ _No engine differences detected._
 
 ## Constraints Snapshot
 - `created_at` – default=CURRENT_TIMESTAMP(6)
-- `status` – default=pending, enum
 - `retries` – default=0
+- `status` – default=pending, enum
 - `updated_at` – default=CURRENT_TIMESTAMP(6)
 
 ## Schema Files
