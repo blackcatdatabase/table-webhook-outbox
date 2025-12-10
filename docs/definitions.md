@@ -5,13 +5,13 @@ Outbox table for delivering webhooks.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
-| event_type | VARCHAR(100) | NO |  | Webhook event key. |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| next_attempt_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Next attempt time (UTC). |
+| event_type | VARCHAR(100) | NO |  | Webhook event key. |
 | payload | mysql: JSON / postgres: JSONB | YES |  | JSON payload. |
-| retries | mysql: INT / postgres: INTEGER | NO | 0 | Retry counter. |
 | status | mysql: ENUM('pending','sent','failed') / postgres: TEXT | NO | pending | Delivery status. (enum: pending, sent, failed) |
+| retries | mysql: INT / postgres: INTEGER | NO | 0 | Retry counter. |
+| next_attempt_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Next attempt time (UTC). |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |
 
 ## Engine Details
