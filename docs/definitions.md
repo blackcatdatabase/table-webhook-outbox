@@ -3,16 +3,17 @@
 Outbox table for delivering webhooks.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| event_type | VARCHAR(100) | NO |  | Webhook event key. |
-| payload | mysql: JSON / postgres: JSONB | YES |  | JSON payload. |
-| status | mysql: ENUM('pending','sent','failed') / postgres: TEXT | NO | pending | Delivery status. (enum: pending, sent, failed) |
-| retries | mysql: INT / postgres: INTEGER | NO | 0 | Retry counter. |
-| next_attempt_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Next attempt time (UTC). |
-| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
-| updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| event_type | VARCHAR(100) | NO |  | Webhook event key. |  |
+| payload | mysql: JSON / postgres: JSONB | YES |  | JSON payload. |  |
+| status | mysql: ENUM('pending','sent','failed') / postgres: TEXT | NO | pending | Delivery status. (enum: pending, sent, failed) |  |
+| retries | mysql: INT / postgres: INTEGER | NO | 0 | Retry counter. |  |
+| next_attempt_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Next attempt time (UTC). |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
+| updated_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Update timestamp (UTC). |  |
+| version | mysql: INT / postgres: INTEGER | NO | 0 | Optimistic locking version counter. |  |
 
 ## Engine Details
 
